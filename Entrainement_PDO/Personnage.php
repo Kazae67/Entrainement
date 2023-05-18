@@ -3,13 +3,13 @@
 // Class
 Class Personnage{
 
-    private static $maxVie = 300; // Propre à toute la classe 
+    protected static $maxVie = 300; // Propre à toute la classe 
     const MAX_VIE = 250; // Propre à l'instance en cours, à l'objet instancié
 
-    private $nom; // private : peut entrer seulement depuis la classe, utiliser "Get" pour récupérer
-    private $pv = 100;
-    private $defense = 2;
-    private $atk = 10; 
+    protected $nom; // protected : peut entrer seulement depuis la classe, utiliser "Get" pour récupérer
+    protected $pv = 100;
+    protected $defense = 2;
+    protected $atk = 10; 
 
     // Constructor
     public function __construct($nom){
@@ -48,8 +48,8 @@ Class Personnage{
         return $this->pv <= 0;
     }
     
-    // cette fonction n'a pas besoin d'être regardé depuis l'extérieur alors on l'a met en private
-    private function empecherNegatif(){ 
+    // cette fonction n'a pas besoin d'être regardé depuis l'extérieur alors on l'a met en protected
+    protected function empecherNegatif(){ 
         if($this ->pv <0){
             $this->pv = 0;
         }
