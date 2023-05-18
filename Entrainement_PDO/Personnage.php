@@ -1,11 +1,6 @@
 <?php
 
-// Utiliser /** pour documenter efficacement */
-
-/**
- * Class Form
- * Permet de générer un formulaire rapidement et simplement
- */
+// Class
 Class Personnage{
     private $nom; // private : peut entrer seulement depuis la classe, utiliser "Get" pour récupérer
     private $pv = 100;

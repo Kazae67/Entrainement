@@ -1,6 +1,9 @@
 <?php
 
-// CLASS
+/**
+ * Class Form
+ * Permet de générer un formulaire rapidement et simplement
+ */
 Class Form{
     private $data;
     public $surround = 'p'; // construit le paragraphe <p></p>
