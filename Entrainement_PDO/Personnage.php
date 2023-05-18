@@ -59,6 +59,7 @@ Class Personnage{
     public function attaque($cible){
         $cible->pv -= $this->atk;
         $cible->empecherNegatif();
+        // proie.pv -= attaquant.atk
         // $cible = proie
         // $this = attaquant
     }
