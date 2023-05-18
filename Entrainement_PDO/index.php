@@ -7,24 +7,31 @@ require "Personnage.php";
 
 // Personnage 1
 $mario = new Personnage("Mario");
-$mario->atk = 100;
 
 // Personnage 2
 $luigi = new Personnage("Luigi");
 
+
+// Si c'est privé, utiliser Get/Set
+// Getters
+$mario->setNom("Wario");
+
+// Setters
+echo $mario->getNom();
+
+
+
+
 // Compétences
-$mario->regenerer();
-$luigi->regenerer();
-$mario->attaque($luigi);
+// $mario->regenerer();
+// $luigi->regenerer();
+// $mario->attaque($luigi);
 
-if($luigi->mort()){
-    echo "Luigi est mort";
-}else{
-    echo "Luigi est vivant avec (" . $luigi->pv ." pv) restant";
-}
+// if( $luigi->mort()){
+//     echo "Luigi est mort";
+// }else{
+//     echo "Luigi est vivant avec (" . $luigi->pv ." pv) restant";
+// }
 
-// Affichage
-var_dump($mario);
-var_dump($luigi);
 
 ?>
