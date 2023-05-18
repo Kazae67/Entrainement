@@ -5,27 +5,44 @@
  * Permet de générer un formulaire rapidement et simplement
  */
 Class Form{
-    private $data;
-    public $surround = 'p'; // construit le paragraphe <p></p>
 
-    // CONSTRUCTOR
-    public function __construct($data = array()){ // = array rend le paramètre optionnel pour que les données soit pas obligatoires 
+    /**
+     * @var array Données utilisées par le formulaire
+     */
+    private $data;
+
+    /**
+     * @var string Tag utilisé pour entourer les champs
+     */
+    public $surround = 'p'; 
+
+    /**
+     * @param array $data | Données utilisées par le formulaire
+     * Rend le paramètre optionnel pour que les données ne soient pas obligatoires 
+     */
+    public function __construct($data = array()){ 
         $this->data = $data;  
     }
 
-    // GETTERS
-    // Rempli automatiquement les champs
-    private function getValue($index){
-        return isset($this->data[$index]) ? $this->data[$index] : null; // on pas [index] dans le tableau $this->data[$index]
-    }
-
-    // FUNCTIONS
-    // On demande à la function d'entourer $html par le paragraphe 'p' assigné dans $surround
+    /**
+     * @param string $html | Code HTML à entourer par le paragraphe 'p' assigné dans la @var $surround
+     * @return string
+     */
     private function surround($html){
         return "<{$this->surround}>{$html}</$this->surround}>"; 
     }
 
-    // Input
+    /**
+     * @param string $index | Index de la valeur à récupérer 
+     * Rempli automatiquement les champs
+     */
+    private function getValue($index){
+        return isset($this->data[$index]) ? $this->data[$index] : null; 
+    }
+
+    /**
+     * @param string $name | 
+     */
     public function input($name){
         return $this->surround(
             '<input 
@@ -34,6 +51,9 @@ Class Form{
             value="' .$this->getValue($name) .'">'); // on récupérer directement le nom dans la valeur
     }
 
+    /**
+     * @return string
+     */
     // Submit
     public function submit(){
         return $this->surround('<button type="submit">Envoyer</button>');
