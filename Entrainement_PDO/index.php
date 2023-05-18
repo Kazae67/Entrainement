@@ -1,5 +1,7 @@
 <?php
 require 'Form.php';
+require 'Text.php';
+
 
 // $_POST pour que la personne qui remplie le formulaire garde ses champs remplis
 // # = forme courante
