@@ -2,6 +2,10 @@
 
 // Class
 Class Personnage{
+
+    private static $maxVie = 300; // Propre à toute la classe 
+    const MAX_VIE = 250; // Propre à l'instance en cours, à l'objet instancié
+
     private $nom; // private : peut entrer seulement depuis la classe, utiliser "Get" pour récupérer
     private $pv = 100;
     private $defense = 2;
@@ -17,12 +21,10 @@ Class Personnage{
         $this->nom = $nom;
     }
 
-
     // Getters
     public function getNom(){
         return $this->nom;
     }
-
     public function getPv(){
         return $this->pv;
     }
@@ -33,16 +35,14 @@ Class Personnage{
         return $this->atk;
     }
 
-
     // Functions
     public function regenerer($pv = null){
         if(is_null($pv)){
-            $this->pv = 100;
+            $this->pv = self::MAX_VIE;  // synthaxe CONST : self::MAX_VIE | synthaxe static ::$maxVie
         }else{
             $this->pv += $pv;
         }
     }
-
     
     public function mort(){
         return $this->pv <= 0;
