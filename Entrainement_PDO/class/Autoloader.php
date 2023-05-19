@@ -9,10 +9,12 @@ Class Autoloader{
     }
 
     static function autoload($class){
-        $class = str_replace('Tutoriel\\', '', $class);
-        $class = str_replace('\\', '/', $class);
-        
-        require 'class/' . $class . '.php';
+        if(strpos($class,__NAMESPACE__ . '\\') === 0){
+            $class = str_replace(__NAMESPACE__. '\\', '', $class); // NAMESPACE à la place de 'Tutoriel'
+            $class = str_replace('\\', '/', $class);
+            require 'class/' . $class . '.php';
+
+        }
     }
 }
 
