@@ -2,7 +2,7 @@
 
 Class Text{
 
-    private static $suffix = " €"; // Propre à toute la classe 
+    private static $suffix = " €"; // Constante propre à toute la classe
     const SUFFIX = " €"; // Propre à l'instance en cours, à l'objet instancié
 
     // Sert à appeler  withZero si la function est en private
