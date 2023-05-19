@@ -1,4 +1,5 @@
 <?php
+namespace Tutoriel;
 
 // Archer hérite des paramètres de la class Personnage
 Class Archer extends Personnage{

@@ -1,6 +1,6 @@
 <?php
-
 namespace Tutoriel;
+
 Class Autoloader{
 
     static function register(){

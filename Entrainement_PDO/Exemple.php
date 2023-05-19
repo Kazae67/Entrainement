@@ -1,7 +1,10 @@
 <?php
-require 'Personnage.php';
-require 'Archer.php';
+namespace Tutoriel;
 
+// Autoloader
+require 'class/Autoloader.php';
+Autoloader::register();
+ 
 $mario = new Personnage('Mario');
 $luigi = new Personnage('Luigi');
 

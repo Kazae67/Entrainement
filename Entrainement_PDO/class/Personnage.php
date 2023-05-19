@@ -1,4 +1,5 @@
 <?php
+namespace Tutoriel;
 
 // Class
 Class Personnage{
