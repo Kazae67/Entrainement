@@ -1,3 +1,9 @@
+<?php
+// On a plus à utiliser manuellement les namespaces dans Autoloader Ex : \Tutoriel\Autoloader::register() ou \Tutoriel\HTML\BootstrapForm() mais juste Autoloader::register();
+use \Tutoriel\HTML\BootstrapForm;
+use \Tutoriel\Autoloader;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +21,7 @@
     require 'class/Autoloader.php';
     Autoloader::register();
 
+  
     // $_POST pour que la personne qui remplie le formulaire garde ses champs remplis
     $form = new BootstrapForm($_POST);
     ?>
