@@ -11,9 +11,10 @@
 <body>
     
     <?php
-    require 'Form.php';
-    require 'BootstrapForm.php';
-    
+    // Autoloader
+    require 'class/Autoloader.php';
+    Autoloader::register();
+
     // $_POST pour que la personne qui remplie le formulaire garde ses champs remplis
     $form = new BootstrapForm($_POST);
     ?>
