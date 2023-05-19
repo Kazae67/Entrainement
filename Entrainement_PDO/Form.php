@@ -9,7 +9,7 @@ Class Form{
     /**
      * @var array Données utilisées par le formulaire
      */
-    private $data;
+    protected $data;
 
     /**
      * @var string Tag utilisé pour entourer les champs
@@ -28,7 +28,7 @@ Class Form{
      * @param string $html | Code HTML à entourer par le paragraphe 'p' assigné dans la @var $surround
      * @return string
      */
-    private function surround($html){
+    protected function surround($html){
         return "<{$this->surround}>{$html}</$this->surround}>"; 
     }
 
@@ -36,7 +36,7 @@ Class Form{
      * @param string $index | Index de la valeur à récupérer 
      * Rempli automatiquement les champs
      */
-    private function getValue($index){
+    protected function getValue($index){
         return isset($this->data[$index]) ? $this->data[$index] : null; 
     }
 

@@ -12,9 +12,10 @@
     
     <?php
     require 'Form.php';
+    require 'BootstrapForm.php';
     
     // $_POST pour que la personne qui remplie le formulaire garde ses champs remplis
-    $form = new Form($_POST);
+    $form = new BootstrapForm($_POST);
     ?>
     
     <form method="post" action="#">
@@ -24,7 +25,7 @@
     echo $form->submit();
         ?>
     </form>
-    
+
 </body>
 </html>
 
