@@ -1,4 +1,5 @@
 <?php
+// Terminé !
 // On a plus à utiliser manuellement les namespaces dans Autoloader Ex : \Tutoriel\Autoloader::register() ou \Tutoriel\HTML\BootstrapForm() mais juste Autoloader::register();
 use \Tutoriel\HTML\BootstrapForm;
 use \Tutoriel\Autoloader;
