@@ -28,9 +28,9 @@ Class Database{
         return $this->pdo;
     }
 
-    public function query($statement){
+    public function query($statement, $class_name){
         $req = $this->getPDO()->query($statement); // query retourne un PDO statement (pour ensuite utiliser un fetchAll(récupérer toutes les données));
-        $datas = $req->fetchAll(PDO::FETCH_OBJ); // fetchAll() récupère les données renvoie sous forme de tableau | FETCH_OBJ renvoie sous forme d'objet
+        $datas = $req->fetchAll(PDO::FETCH_CLASS, '\\' . $class_name); // fetchAll() récupère les données renvoie sous forme de tableau | FETCH_OBJ renvoie sous forme d'objet
         return $datas;
     }
 
