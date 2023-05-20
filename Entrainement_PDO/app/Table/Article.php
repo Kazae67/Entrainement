@@ -3,8 +3,15 @@
 namespace App\Table;
 
 class Article{
+
+    public function __get($key){
+        $method = 'get' . ucfirst($key);
+        $this->$key = $this->$method();
+        return $this->$method();
+  
+    }
     
-    public function getURL(){
+    public function getUrl(){
         return 'index.php?p=article&id=' . $this->id;
     }
 

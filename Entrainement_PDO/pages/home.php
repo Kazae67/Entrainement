@@ -8,9 +8,9 @@ $db = new App\Database('blog');
 <ul>
     <?php foreach($db->query('SELECT * FROM articles', 'App\Table\Article') as $post): ?>
         
-        <h2><a href="<?=/*contenu*/  $post->getURL() ?>"><?= $post->titre;?></a></h2>
+  <h2><a href="<?= $post->getUrl() ?>"><?= $post->titre;?></a></h2>
     
-        <p><?=/*contenu*/ $post->getExtrait();?></p>
+  <p><?= $post->getExtrait();?></p>
 
     <?php endforeach; ?>
 </ul>
