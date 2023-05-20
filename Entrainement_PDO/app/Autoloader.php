@@ -1,7 +1,6 @@
 <?php
 namespace App;
 
-
 /**
  * Class Autoloader
  * @package Tutoriel

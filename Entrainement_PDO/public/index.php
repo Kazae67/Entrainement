@@ -1,5 +1,5 @@
 <?php
-require '../app/Autoloader.php';
+require_once '../app/Autoloader.php';
 App\Autoloader::register();
 
 // Condition pour $p

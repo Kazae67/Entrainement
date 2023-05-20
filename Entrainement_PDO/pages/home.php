@@ -1,18 +1,8 @@
 <?php
 
-/**
- * @DNS
- * Nom>Host>Username>Password
- */
-
- 
+require_once '../app/Database.php';
 $db = new App\Database('blog');
 $datas = $db->query('SELECT * FROM articles');
-
-$pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', '');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // renvoie l'erreur concerné, faire avant un die(var_dump(PDO::ATTR_ERRMODE));
-$resultat = $pdo->query('SELECT * FROM articles'); // query retourne un PDO statement (pour ensuite utiliser un fetchAll(récupérer toutes les données))
-$datas = $resultat->fetchAll(PDO::FETCH_OBJ); // fetchAll() récupère les données renvoie sous forme de tableau | FETCH_OBJ renvoie sous forme d'objet
 var_dump($datas); 
 
 
