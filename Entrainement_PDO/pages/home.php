@@ -1,6 +1,6 @@
 <?php
 
-require_once '../app/Database.php';
+require '../app/Database.php';
 $db = new App\Database('blog');
 $datas = $db->query('SELECT * FROM articles');
 var_dump($datas); 

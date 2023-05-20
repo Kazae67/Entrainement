@@ -18,11 +18,14 @@ Class Database{
 
     }
 
+    // Empêche qu'il fasse plusieurs fois la connexion si elle est déjà co
     private function getPDO(){
-        $pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // renvoie l'erreur concerné, faire avant un die(var_dump(PDO::ATTR_ERRMODE));
-        $this->pdo = $pdo;
-        return $pdo;
+        if($this->pdo === null){
+            $pdo = new PDO('mysql:dbname=blog;host=localhost', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // renvoie l'erreur concerné, faire avant un die(var_dump(PDO::ATTR_ERRMODE));
+            $this->pdo = $pdo;
+        }
+        return $this->pdo;
     }
 
     public function query($statement){
